@@ -6,16 +6,15 @@ variable "role_name" {
 variable "role_path" {
   description = "The path to the role. See https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html for more information."
   type        = "string"
-  default     = "/"
+  default     = "/external/"
 }
 
 variable "role_description" {
   description = "The description of the role."
   type        = "string"
-  default     = ""
 }
 
-variable "trusted_account_id" {
+variable "account_id" {
   description = "AWS Account ID that allowed to assume this role."
   type        = "string"
 }
