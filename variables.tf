@@ -12,10 +12,14 @@ variable "role_path" {
 variable "role_description" {
   description = "The description of the role."
   type        = "string"
-  default     = ""
 }
 
-variable "policy_document" {
-  description = "IAM policy document in JSON format"
+variable "role_assume_policy" {
+  description = "IAM policy document that grants an entity permission to assume the role in JSON format."
   type        = "string"
+}
+
+variable "role_force_detach_policies" {
+  description = "Specifies to force detaching any policies the role has before destroying it."
+  default     = false
 }
