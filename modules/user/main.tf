@@ -28,7 +28,7 @@ data "aws_iam_policy_document" "without_mfa" {
   }
 }
 
-module "role" {
+module "this" {
   source = "../../"
 
   role_name        = "${var.role_name}"

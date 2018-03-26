@@ -12,7 +12,6 @@ variable "role_path" {
 variable "role_description" {
   description = "The description of the role."
   type        = "string"
-  default     = ""
 }
 
 variable "trusted_users" {
