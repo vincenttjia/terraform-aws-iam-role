@@ -24,6 +24,22 @@ resource "aws_iam_role_policy_attachment" "this" {
 }
 ```
 
+Important Notes
+---------------
+
+* `role_path` should begin and end with a forward slash. Examples:
+  * `role_path = "/external/"` -> Valid
+  * `role_path = "/external"` -> Invalid
+  * `role_path = "external/"` -> Invalid
+  * `role_path = "external"` -> Invalid
+* Whether you specify `/external/` to the path or not, it will always be appended. Examples:
+  * `role_path = "/external/"` -> IAM Role's Path = /external/
+  * `role_path = "/external/vendors/"` -> IAM Role's Path = /external/vendors/
+  * `role_path = "/vendors/"` -> IAM Role's Path = /external/vendors/
+  * `role_path = "/external/vendors/special/"` -> IAM Role's Path = /external/vendors/special/
+  * `role_path = "/vendors/special/"` -> IAM Role's Path = /external/vendors/special/
+
+
 Terraform Version
 -----------------
 
