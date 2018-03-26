@@ -6,7 +6,7 @@ provider "aws" {
 module "this" {
   source = "../../modules/service"
 
-  role_purpose     = "Example Lambda"
+  role_identifier  = "Example Lambda"
   role_description = "Enable example lambda function to create log group."
   aws_service      = "lambda.amazonaws.com"
 }

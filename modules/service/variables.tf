@@ -1,5 +1,5 @@
-variable "role_purpose" {
-  description = "The purpose of the role. It will be appended to predefined prefix and set as role name."
+variable "role_identifier" {
+  description = "The name to identify the role. It will be appended to predefined prefix and set as role name."
   type        = "string"
 }
 
