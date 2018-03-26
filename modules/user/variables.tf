@@ -15,7 +15,7 @@ variable "role_description" {
 }
 
 variable "trusted_users" {
-  description = "Users that are trusted for assuming the rule."
+  description = "List of ARNs of users that are granted to assume the role."
   type        = "list"
 }
 
