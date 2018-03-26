@@ -6,8 +6,9 @@ provider "aws" {
 module "this" {
   source = "../../modules/user"
 
-  role_name = "test_role_user_without_mfa"
-  role_path = "/test/"
+  role_name        = "test_role_user_without_mfa"
+  role_path        = "/test/"
+  role_description = "Example Role for IAM User"
 
   trusted_users = [
     "arn:aws:iam::123456789012:user/rafikurnia",

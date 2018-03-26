@@ -6,11 +6,12 @@ provider "aws" {
 module "this" {
   source = "../../modules/external"
 
-  role_name = "test_role_another_account_with_external_id"
-  role_path = "/external/"
+  role_name        = "test_role_another_account_with_external_id"
+  role_path        = "/external/"
+  role_description = "Example Role for External Account"
 
-  trusted_account_id = "123456789012"
-  external_id        = "ABCDEFGHIJ01"
+  account_id  = "123456789012"
+  external_id = "ABCDEFGHIJ01"
 }
 
 resource "aws_iam_role_policy_attachment" "this" {
