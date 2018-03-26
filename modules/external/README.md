@@ -18,7 +18,7 @@ module "external" {
   external_id = "ABCDEFGHIJ01"
 }
 
-resource "aws_iam_role_policy_attachment" "this" {
+resource "aws_iam_role_policy_attachment" "ec2_readonly_managed_policy" {
   role       = "${module.external.role_name}"
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess"
 }
@@ -32,7 +32,7 @@ Important Notes
   * `role_path = "/external"` -> Invalid
   * `role_path = "external/"` -> Invalid
   * `role_path = "external"` -> Invalid
-* Whether you specify `/external/` to the path or not, it will always be appended. Examples:
+* For the convention, whether you specify `/external/` to the path or not, it will always be appended. Examples:
   * `role_path = "/external/"` -> IAM Role's Path = /external/
   * `role_path = "/external/vendors/"` -> IAM Role's Path = /external/vendors/
   * `role_path = "/vendors/"` -> IAM Role's Path = /external/vendors/
