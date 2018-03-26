@@ -12,9 +12,9 @@ Usage
 
 This module will only create an IAM Role and its Trust Relationships policy document. You need to attach your own poliy document outside the module.
 
-To use a particular type of supported role, you can go into `modules` folder and see `README.md` at each subfolder.
+To use a particular type of supported role, you can go into `modules` folder and read `README.md` at each subfolde for more detailed information.
 
-To understand better on how to use this module, you can go into `examples` folder and try to execute them.
+To understand better on how to implement this module, you can go into `examples` folder and try to execute them.
 
 Modules
 --------
