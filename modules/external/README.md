@@ -38,6 +38,7 @@ Important Notes
   * `role_path = "/vendors/"` -> IAM Role's Path = /external/vendors/
   * `role_path = "/external/vendors/special/"` -> IAM Role's Path = /external/vendors/special/
   * `role_path = "/vendors/special/"` -> IAM Role's Path = /external/vendors/special/
+* `external_id` is optional. Use this only when the 3rd party provides you an ID.
 
 
 Terraform Version
