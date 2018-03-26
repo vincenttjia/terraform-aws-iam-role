@@ -1,11 +1,12 @@
 provider "aws" {
-  region = "ap-southeast-1"
+  version = ">= 1.12.0"
+  region  = "ap-southeast-1"
 }
 
-module "example_role" {
+module "this" {
   source = "../../modules/user"
 
-  role_name = "test_role_user_with_mfa"
+  role_name = "test_role_user_without_mfa"
   role_path = "/test/"
 
   trusted_users = [
@@ -13,10 +14,10 @@ module "example_role" {
     "arn:aws:iam::123456789012:user/rafikurniaputra",
   ]
 
-  mfa_required = true
+  mfa_required = false
 }
 
-resource "aws_iam_role_policy_attachment" "s3_read_only_managed_policy" {
-  role       = "${module.example_role.role_name}"
+resource "aws_iam_role_policy_attachment" "this" {
+  role       = "${module.this.role_name}"
   policy_arn = "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
 }
