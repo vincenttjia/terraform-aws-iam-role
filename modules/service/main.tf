@@ -1,3 +1,4 @@
+# Trust relationship policy document for AWS Service.
 data "aws_iam_policy_document" "this" {
   statement = {
     actions = ["sts:AssumeRole"]
@@ -9,6 +10,7 @@ data "aws_iam_policy_document" "this" {
   }
 }
 
+# Module, the parent module.
 module "this" {
   source = "../../"
 

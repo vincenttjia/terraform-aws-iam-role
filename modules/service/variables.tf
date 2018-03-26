@@ -9,6 +9,6 @@ variable "role_description" {
 }
 
 variable "aws_service" {
-  description = "AWS service that are allowed to perform actions granted on your behalf. Example: 'lambda.amazonaws.com'"
+  description = "AWS service that are allowed to perform actions granted on your behalf. Example value: 'lambda.amazonaws.com'"
   type        = "string"
 }

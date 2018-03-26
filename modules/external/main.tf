@@ -1,8 +1,11 @@
+# Work around to throws an exception. 
+# It throws exception when the provided path does not begin and end with a forward slash.
 resource "null_resource" "is_path_valid" {
   count                                                    = "${substr(var.role_path, 0, 1) == "/" && substr(var.role_path, -1, 1) == "/" ? 0 : 1}"
   "Path names must begin and end with a forward slash (/)" = true
 }
 
+# Trust relationships policy document for external AWS Account that does not provides External ID.
 data "aws_iam_policy_document" "without_external_id" {
   statement = {
     sid     = "AllowAssumeRoleForAnotherAccount"
@@ -15,6 +18,7 @@ data "aws_iam_policy_document" "without_external_id" {
   }
 }
 
+# Trust relationships policy document for external AWS Account that provides External ID.
 data "aws_iam_policy_document" "with_external_id" {
   statement = {
     sid     = "AllowAssumeRoleForAnotherAccount"
@@ -36,6 +40,7 @@ data "aws_iam_policy_document" "with_external_id" {
   }
 }
 
+# Module, the parent module.
 module "this" {
   source = "../../"
 
