@@ -29,7 +29,7 @@ tmp
 .project
 .DS_Store
 .kitchen/
-.kitchen.yml
 .kitchen.local.yml
 Berksfile.lock
 *.swp
+terraform.tfstate.d/
