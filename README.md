@@ -26,7 +26,7 @@ Modules
 Examples
 --------
 
-* [Service Role for Lambda](https://github.com/traveloka/terraform-aws-iam-role/tree/master/examples/aws_service_lambda)
+* [Service Role for Config](https://github.com/traveloka/terraform-aws-iam-role/tree/master/examples/aws_service_config)
 * [IAM Role for 3rd Party AWS Account](https://github.com/traveloka/terraform-aws-iam-role/tree/master/examples/external_account)
 * [IAM Role for User](https://github.com/traveloka/terraform-aws-iam-role/tree/master/examples/user_iam)
 
