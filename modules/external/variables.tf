@@ -14,6 +14,11 @@ variable "role_description" {
   type        = "string"
 }
 
+variable "role_force_detach_policies" {
+  description = "Specifies to force detaching any policies the role has before destroying it."
+  default     = false
+}
+
 variable "account_id" {
   description = "AWS Account ID that allowed to assume this role."
   type        = "string"

@@ -1,9 +1,13 @@
+provider "random" {
+  version = "~> 1.1"
+}
+
 # Contains local values that are used to increase DRYness of the code.
 locals {
   # max bytes of random id to use as unique suffix. 16 hex chars, each byte takes 2 hex chars
   max_byte_length = 8
 
-  # Example value: "ServiceRoleForLambda_example-lambda-794e04d479e1c32b"
+  # Example value: "ServiceRoleForConfig_default-config-dec5ac0e50847943"
   role_name_max_length      = 64
   role_name_format          = "ServiceRoleFor%s_%s-"
   role_name_prefix          = "${format(local.role_name_format, title(element(split(".", var.aws_service), 0)),join("-", split(" ", lower(var.role_identifier))))}"
@@ -38,5 +42,5 @@ module "this" {
   role_description = "${var.role_description}"
 
   role_assume_policy         = "${data.aws_iam_policy_document.this.json}"
-  role_force_detach_policies = true
+  role_force_detach_policies = "${var.role_force_detach_policies}"
 }
