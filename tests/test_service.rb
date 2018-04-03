@@ -3,7 +3,7 @@
 require "awspec"
 require "rhcl"
 
-main_tf = Rhcl.parse(File.open("examples/aws_service_lambda/main.tf"))
+main_tf = Rhcl.parse(File.open("examples/aws_service_config/main.tf"))
 module_this = main_tf["module"]["this"]
 aws_service = module_this["aws_service"]
 
