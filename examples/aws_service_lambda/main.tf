@@ -11,22 +11,6 @@ module "this" {
   aws_service      = "lambda.amazonaws.com"
 }
 
-data "aws_iam_policy_document" "this" {
-  statement = [
-    {
-      effect = "Allow"
-
-      actions = [
-        "logs:CreateLogGroup",
-      ]
-
-      resources = [
-        "arn:aws:logs:*",
-      ]
-    },
-  ]
-}
-
 resource "aws_iam_role_policy" "this" {
   name = "AllowLambdaToCreateLogGroup"
   role = "${module.this.role_name}"
