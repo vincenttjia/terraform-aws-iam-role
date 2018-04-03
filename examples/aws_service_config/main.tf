@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 module "this" {
-  source = "../../modules/service"
+  source = "../../modules/service" # In actual use case, you have to replace this line with: source = "github.com/traveloka/terraform-aws-iam-role.git//modules/service?ref=0.0.1"
 
   role_identifier            = "Default Config"
   role_description           = "Service Role for Default AWS Config"
