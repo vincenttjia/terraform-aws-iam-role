@@ -6,38 +6,7 @@ This module allows you to create an IAM Role for AWS service to perform actions 
 Usage
 -----
 
-```hcl
-module "lambda_service" {
-  source = "github.com/traveloka/terraform-aws-iam-role.git//modules/service?ref=0.0.1"
-
-  role_identifier  = "Example Lambda"
-  role_description = "Enable example lambda function to create log group."
-  aws_service      = "lambda.amazonaws.com"
-}
-
-data "aws_iam_policy_document" "lambda_service" {
-  statement = [
-    {
-      effect = "Allow"
-
-      actions = [
-        "logs:CreateLogGroup",
-      ]
-
-      resources = [
-        "arn:aws:logs:*",
-      ]
-    },
-  ]
-}
-
-resource "aws_iam_role_policy" "lambda_service" {
-  name = "AllowLambdaToCreateLogGroup"
-  role = "${module.lambda_service.role_name}"
-
-  policy = "${data.aws_iam_policy_document.lambda_service.json}"
-}
-```
+You can open this example: [Service Role for Config](https://github.com/traveloka/terraform-aws-iam-role/tree/master/examples/aws_service_config)
 
 Important Notes
 ---------------

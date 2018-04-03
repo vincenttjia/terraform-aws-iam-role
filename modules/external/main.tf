@@ -1,3 +1,7 @@
+provider "null" {
+  version = "~> 1.0"
+}
+
 # Work around to throws an exception. 
 # It throws exception when the provided path does not begin and end with a forward slash.
 resource "null_resource" "is_path_valid" {
@@ -49,5 +53,5 @@ module "this" {
   role_description = "${var.role_description}"
 
   role_assume_policy         = "${var.external_id == "" ? data.aws_iam_policy_document.without_external_id.json : data.aws_iam_policy_document.with_external_id.json}"
-  role_force_detach_policies = true
+  role_force_detach_policies = "${var.role_force_detach_policies}"
 }

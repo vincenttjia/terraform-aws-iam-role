@@ -6,23 +6,7 @@ This module is meant to create IAM Role for 3rd party or another AWS Account.
 Usage
 -----
 
-```hcl
-module "external" {
-  source = "github.com/traveloka/terraform-aws-iam-role.git//modules/external?ref=0.0.1"
-
-  role_name        = "RoleForVendor"
-  role_path        = "/external/"
-  role_description = "Role for Vendor to assume"
-
-  account_id  = "123456789012"
-  external_id = "ABCDEFGHIJ01"
-}
-
-resource "aws_iam_role_policy_attachment" "ec2_readonly_managed_policy" {
-  role       = "${module.external.role_name}"
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess"
-}
-```
+You can open this example: [IAM Role for 3rd Party AWS Account](https://github.com/traveloka/terraform-aws-iam-role/tree/master/examples/external_account)
 
 Important Notes
 ---------------

@@ -39,5 +39,5 @@ module "this" {
   role_description = "${var.role_description}"
 
   role_assume_policy         = "${var.mfa_required ? data.aws_iam_policy_document.with_mfa.json : data.aws_iam_policy_document.without_mfa.json}"
-  role_force_detach_policies = true
+  role_force_detach_policies = "${var.role_force_detach_policies}"
 }
