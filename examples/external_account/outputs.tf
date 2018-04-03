@@ -23,6 +23,11 @@ output "role_arn" {
   value       = "${module.this.role_arn}"
 }
 
+output "role_description" {
+  description = "The description of the role."
+  value       = "${module.this.role_description}"
+}
+
 output "role_create_date" {
   description = "The creation date of the IAM role."
   value       = "${module.this.role_create_date}"
