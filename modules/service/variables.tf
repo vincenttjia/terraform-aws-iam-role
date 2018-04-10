@@ -17,3 +17,8 @@ variable "aws_service" {
   description = "AWS service that are allowed to perform actions granted on your behalf. Example value: 'config.amazonaws.com'"
   type        = "string"
 }
+
+variable "role_max_session_duration" {
+  description = "The maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to 12 hours."
+  default     = 3600
+}

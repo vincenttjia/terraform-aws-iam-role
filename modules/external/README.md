@@ -1,16 +1,15 @@
 terraform-aws-iam-role/external
 ===============================
-
 This module is meant to create IAM Role for 3rd party or another AWS Account.
+
 
 Usage
 -----
-
 You can open this example: [IAM Role for 3rd Party AWS Account](https://github.com/traveloka/terraform-aws-iam-role/tree/master/examples/external_account)
+
 
 Important Notes
 ---------------
-
 * `role_path` should begin and end with a forward slash. Examples:
   * `role_path = "/external/"` -> Valid
   * `role_path = "/external"` -> Invalid
@@ -23,21 +22,3 @@ Important Notes
   * `role_path = "/external/vendors/special/"` -> IAM Role's Path = /external/vendors/special/
   * `role_path = "/vendors/special/"` -> IAM Role's Path = /external/vendors/special/
 * `external_id` is optional. Use this only when the 3rd party provides you an ID.
-
-
-Terraform Version
------------------
-
-This module was created using Terraform 0.11.4. 
-So to be more safe, Terraform version 0.11.4 or newer is required to use this module.
-
-
-Authors
--------
-
-* [Rafi Kurnia Putra](https://github.com/rafikurnia)
-
-License
--------
-
-Apache 2 Licensed. See LICENSE for full details.
