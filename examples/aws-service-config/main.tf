@@ -1,15 +1,18 @@
 provider "aws" {
-  version = "~> 1.13.0"
-  region  = "ap-southeast-1"
+  region = "ap-southeast-1"
 }
 
 module "this" {
-  source = "../../modules/service" # In actual use case, you have to replace this line with: source = "github.com/traveloka/terraform-aws-iam-role.git//modules/service?ref=0.0.1"
+  # In actual use case, you have to replace the following line (line 8) with: 
+  # source = "github.com/traveloka/terraform-aws-iam-role.git//modules/service?ref=v0.3.0"
+  source = "../../modules/service"
 
   role_identifier            = "Default Config"
   role_description           = "Service Role for Default AWS Config"
   role_force_detach_policies = false
-  aws_service                = "config.amazonaws.com"
+  role_max_session_duration  = 43200
+
+  aws_service = "config.amazonaws.com"
 }
 
 resource "aws_iam_role_policy_attachment" "this" {

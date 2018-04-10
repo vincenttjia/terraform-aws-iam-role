@@ -1,10 +1,11 @@
 provider "aws" {
-  version = "1.13.0"
-  region  = "ap-southeast-1"
+  region = "ap-southeast-1"
 }
 
 module "this" {
-  source = "../../modules/instance" # In actual use case, you have to replace this line with: source = "github.com/traveloka/terraform-aws-iam-role.git//modules/instance?ref=0.2.0"
+  # In actual use case, you have to replace the following line (line 8) with:
+  # source = "github.com/traveloka/terraform-aws-iam-role.git//modules/instance?ref=v0.3.0"
+  source = "../../modules/instance"
 
   service_name = "txtdata"
   cluster_role = "app"
