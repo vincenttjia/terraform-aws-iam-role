@@ -1,5 +1,5 @@
 provider "null" {
-  version = "~> 1.0"
+  version = "1.0.0"
 }
 
 # Work around to throws an exception. 
@@ -54,4 +54,5 @@ module "this" {
 
   role_assume_policy         = "${var.external_id == "" ? data.aws_iam_policy_document.without_external_id.json : data.aws_iam_policy_document.with_external_id.json}"
   role_force_detach_policies = "${var.role_force_detach_policies}"
+  role_max_session_duration  = "${var.role_max_session_duration}"
 }

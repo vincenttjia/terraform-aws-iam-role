@@ -1,5 +1,5 @@
 provider "random" {
-  version = "~> 1.1"
+  version = "1.2.0"
 }
 
 # Contains local values that are used to increase DRYness of the code.
@@ -43,4 +43,5 @@ module "this" {
 
   role_assume_policy         = "${data.aws_iam_policy_document.this.json}"
   role_force_detach_policies = "${var.role_force_detach_policies}"
+  role_max_session_duration  = "${var.role_max_session_duration}"
 }
