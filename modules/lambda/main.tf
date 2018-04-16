@@ -1,6 +1,6 @@
 locals {
   descriptive_name = "${join("-", split(" ", lower(var.descriptive_name)))}"
-  name_prefix      = "LambdaRole_${var.service_name}-${local.descriptive_name}"
+  name_prefix      = "LambdaRole_${var.service_name == "" ? var.product_domain : var.service_name}-${local.descriptive_name}"
 }
 
 module "random" {
