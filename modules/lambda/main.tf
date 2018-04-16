@@ -1,6 +1,7 @@
 locals {
   descriptive_name = "${join("-", split(" ", lower(var.descriptive_name)))}"
-  name_prefix      = "LambdaRole_${var.service_name == "" ? var.product_domain : var.service_name}-${local.descriptive_name}"
+  role_identifier  = "${var.service_name == "" ? var.product_domain : var.service_name}-${local.descriptive_name}"
+  name_prefix      = "LambdaRole_${local.role_identifier}"
 }
 
 module "random" {
@@ -29,7 +30,7 @@ module "this" {
 
   role_name        = "${module.random.name}"
   role_path        = "/lambda-role/"
-  role_description = "Lambda Role for ${var.service_name}-${local.descriptive_name}"
+  role_description = "Lambda Role for ${local.role_identifier}"
 
   role_assume_policy         = "${data.aws_iam_policy_document.this.json}"
   role_force_detach_policies = "${var.role_force_detach_policies}"
