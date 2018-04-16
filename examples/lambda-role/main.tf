@@ -7,6 +7,7 @@ module "this" {
   # source = "github.com/traveloka/terraform-aws-iam-role.git//modules/lambda?ref=v0.4.0"
   source = "../../modules/lambda"
 
+  product_domain   = "txt"
   service_name     = "txtjobs"
   descriptive_name = "Periodic Scheduler"
 }
