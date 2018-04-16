@@ -1,6 +1,12 @@
-variable "service_name" {
-  description = "The name of the service that going to assume this role. If service_name is not suitable for your use case, you can put Product Domain Abbreviations here."
+variable "product_domain" {
+  description = "Product domain these resources belong to."
   type        = "string"
+}
+
+variable "service_name" {
+  description = "The name of the service that going to assume this role."
+  type        = "string"
+  default     = ""
 }
 
 variable "descriptive_name" {
