@@ -6,6 +6,7 @@ Currently supported type of Roles are:
 2. Role for IAM User
 3. Role for External AWS Account
 4. Role for Instance Profile
+5. Role for Lambda
 
 
 Usage
@@ -23,6 +24,7 @@ Modules
 * [IAM User](https://github.com/traveloka/terraform-aws-iam-role/tree/master/modules/user)
 * [External AWS Account](https://github.com/traveloka/terraform-aws-iam-role/tree/master/modules/external)
 * [Instance Profile](https://github.com/traveloka/terraform-aws-iam-role/tree/master/modules/instance)
+* [Lambda](https://github.com/traveloka/terraform-aws-iam-role/tree/master/modules/lambda)
 
 
 Examples
@@ -31,6 +33,7 @@ Examples
 * [IAM Role for User](https://github.com/traveloka/terraform-aws-iam-role/tree/master/examples/user-iam)
 * [IAM Role for 3rd Party AWS Account](https://github.com/traveloka/terraform-aws-iam-role/tree/master/examples/external-account)
 * [IAM Role for Instance Profile](https://github.com/traveloka/terraform-aws-iam-role/tree/master/examples/instance-profile)
+* [IAM Role for Lambda](https://github.com/traveloka/terraform-aws-iam-role/tree/master/examples/lambda-role)
 
 
 Tests
