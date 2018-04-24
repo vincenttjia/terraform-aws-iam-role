@@ -1,8 +1,3 @@
-# This module was updated using terraform 0.11.4 at 2018/03/26.
-terraform {
-  required_version = "~> 0.10.8"
-}
-
 # Added provider AWS version constraint. `max_session_duration` is supported on 1.14.0
 provider "aws" {
   version = "~> 1.14"
