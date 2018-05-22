@@ -1,6 +1,7 @@
 # Added provider AWS version constraint. `max_session_duration` is supported on 1.14.0
 provider "aws" {
   version = "~> 1.14"
+  region  = "ap-southeast-1"
 }
 
 # Get the access to the effective Account ID, User ID, and ARN in which Terraform is authorized.
