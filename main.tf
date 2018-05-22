@@ -3,11 +3,8 @@ provider "aws" {
   version = "~> 1.14"
 
   # region is added to prevent consumers getting region prompts (one prompt for each usage)
-  region = "${data.aws_region.current.name}"
+  region = "${var.region}"
 }
-
-# Get the access to the effective Account ID, User ID, and ARN in which Terraform is authorized.
-data "aws_caller_identity" "current" {}
 
 # Provides an IAM role.
 resource "aws_iam_role" "this" {
