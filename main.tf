@@ -6,6 +6,9 @@ provider "aws" {
   region = "${var.region}"
 }
 
+# Get the access to the effective Account ID, User ID, and ARN in which Terraform is authorized.
+data "aws_caller_identity" "current" {}
+
 # Provides an IAM role.
 resource "aws_iam_role" "this" {
   name        = "${var.role_name}"
