@@ -17,7 +17,7 @@ data "aws_iam_policy_document" "without_external_id" {
 
     principals = {
       type        = "AWS"
-      identifiers = ["${var.account_id}"]
+      identifiers = ["${var.principal_identifiers}"]
     }
   }
 }
@@ -30,7 +30,7 @@ data "aws_iam_policy_document" "with_external_id" {
 
     principals = {
       type        = "AWS"
-      identifiers = ["${var.account_id}"]
+      identifiers = ["${var.principal_identifiers}"]
     }
 
     condition = [
