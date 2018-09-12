@@ -19,9 +19,10 @@ variable "role_force_detach_policies" {
   default     = false
 }
 
-variable "account_id" {
-  description = "AWS Account ID that allowed to assume this role."
-  type        = "string"
+variable "principal_identifiers" {
+  description = "List of external principal idenifier that allow to assume this role."
+  type        = "list"
+  default     = []
 }
 
 variable "external_id" {

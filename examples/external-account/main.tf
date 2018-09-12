@@ -13,8 +13,12 @@ module "this" {
   role_force_detach_policies = true
   role_max_session_duration  = 43200
 
-  account_id  = "123456789012" # Replace this with 3rd party's AWS Account ID
-  external_id = "ABCDEFGHIJ01" # Don't set the value if not needed, only set this value if the 3rd party ask you to specify external_id.
+  principal_identifiers = [
+    "11223344556677",
+    "arn:aws:iam::11223344556677:user/bernard",
+  ] # Replace this with 3rd party's AWS Account ID, or with specific 3rd party's IAM ARN
+
+  #external_id = "ABCDEFGHIJ01" # Don't set the value if not needed, only set this value if the 3rd party ask you to specify external_id.
 }
 
 resource "aws_iam_role_policy_attachment" "this" {
