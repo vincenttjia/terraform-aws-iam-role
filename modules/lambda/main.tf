@@ -24,6 +24,18 @@ data "aws_iam_policy_document" "this" {
   }
 }
 
+data "aws_iam_policy_document" "edge" {
+  statement {
+    actions = ["sts:AssumeRole"]
+    effect  = "Allow"
+
+    principals {
+      type        = "Service"
+      identifiers = ["lambda.amazonaws.com", "edgelambda.amazonaws.com"]
+    }
+  }
+}
+
 # Module, the parent module.
 module "this" {
   source = "../../"
@@ -32,7 +44,7 @@ module "this" {
   role_path        = "/lambda-role/"
   role_description = "Lambda Role for ${local.role_identifier}"
 
-  role_assume_policy         = "${data.aws_iam_policy_document.this.json}"
+  role_assume_policy         = "${var.lambda_type != 0 ? data.aws_iam_policy_document.edge.json : data.aws_iam_policy_document.this.json}"
   role_force_detach_policies = "${var.role_force_detach_policies}"
   role_max_session_duration  = "${var.role_max_session_duration}"
 }

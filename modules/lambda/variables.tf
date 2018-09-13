@@ -23,3 +23,8 @@ variable "role_max_session_duration" {
   description = "The maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to 12 hours."
   default     = 3600
 }
+
+variable "lambda_type" {
+  description = "type of lambda , if lambda edge this variable should be 1"
+  default     = 0
+}
