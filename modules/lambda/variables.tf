@@ -25,6 +25,6 @@ variable "role_max_session_duration" {
 }
 
 variable "lambda_type" {
-  description = "type of lambda , if lambda edge this variable should be 1"
-  default     = 0
+  description = "type of lambda , if lambda edge this variable should be true"
+  default     = false
 }
