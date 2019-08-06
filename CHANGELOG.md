@@ -1,3 +1,9 @@
+## v1.0.2 (Aug 6, 2019)
+
+BUG FIXES:
+
+* Update principal to be a list
+
 ## v1.0.1 (Jun 18, 2019)
 
 ENHANCEMENTS:
