@@ -1,44 +1,44 @@
 variable "region" {
   description = "The region from which this module will be executed"
-  type        = "string"
+  type        = string
   default     = "ap-southeast-1"
 }
 
 variable "role_name" {
   description = "The name of the role. It will forces new resource on change."
-  type        = "string"
+  type        = string
 }
 
 variable "role_path" {
   description = "The path to the role. See https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html for more information."
-  type        = "string"
+  type        = string
   default     = "/"
 }
 
 variable "role_description" {
   description = "The description of the role."
-  type        = "string"
+  type        = string
 }
 
 variable "product_domain" {
   description = "Abbreviation of the product domain the created resources belong to"
-  type        = "string"
+  type        = string
 }
 
 variable "environment" {
-  type        = "string"
+  type        = string
   description = "Will be used in Environment tag"
 }
 
 variable "role_tags" {
   description = "Additional tags to be put on iam role"
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
 
 variable "role_assume_policy" {
   description = "IAM policy document that grants an entity permission to assume the role in JSON format."
-  type        = "string"
+  type        = string
 }
 
 variable "role_force_detach_policies" {
@@ -53,6 +53,7 @@ variable "role_max_session_duration" {
 
 variable "role_permission_boundary" {
   description = "IAM policy ARN limiting the maximum access this role can have"
-  type        = "string"
+  type        = string
   default     = ""
 }
+
