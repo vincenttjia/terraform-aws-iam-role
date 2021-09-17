@@ -4,7 +4,7 @@ provider "aws" {
 
 module "this" {
   # In actual use case, you have to replace the following line (line 8) with:
-  # source = "github.com/traveloka/terraform-aws-iam-role.git//modules/user?ref=v0.3.0"
+  #source = "github.com/traveloka/terraform-aws-iam-role.git//modules/user?ref=v2.0.2"
   source = "../../modules/user"
 
   role_name                  = "RandomAdmin"
@@ -14,7 +14,7 @@ module "this" {
   role_max_session_duration  = 43200
 
   trusted_users = [
-    "arn:aws:iam::715824975366:role/SuperAdmin", # In actual use case, you have to replace this line with correct IAM User ARN.
+    "arn:aws:iam::123456789012:role/Example", # In actual use case, you have to replace this line with correct IAM User ARN.
   ]
 
   mfa_required   = true # Set this value to false only when needed

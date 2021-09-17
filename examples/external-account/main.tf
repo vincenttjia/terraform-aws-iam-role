@@ -4,10 +4,10 @@ provider "aws" {
 
 module "this" {
   # In actual use case, you have to replace the following line (line 8) with:
-  # source = "github.com/traveloka/terraform-aws-iam-role.git//modules/external?ref=v0.6.0"
+  #source = "github.com/traveloka/terraform-aws-iam-role.git//modules/external?ref=v2.0.2"
   source = "../../modules/external"
 
-  role_name                  = "ThirdPartyName" # Replace this value with the name given by 3rd party, or define it by yourself with clear and describing name
+  role_name                  = "ThirdPartyName2" # Replace this value with the name given by 3rd party, or define it by yourself with clear and describing name
   role_path                  = "/external/security/"
   role_description           = "Role for ThirdParty"
   role_force_detach_policies = "true"
