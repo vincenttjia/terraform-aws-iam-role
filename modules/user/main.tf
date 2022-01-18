@@ -1,7 +1,10 @@
 # Trust relationship policy document for user that requires MFA to be enabled.
 data "aws_iam_policy_document" "with_mfa" {
   statement {
-    actions = ["sts:AssumeRole"]
+    actions = [
+      "sts:AssumeRole",
+      "sts:SetSourceIdentity"
+    ]
 
     principals {
       type        = "AWS"
@@ -19,7 +22,10 @@ data "aws_iam_policy_document" "with_mfa" {
 # Trust relationship policy document for user that cannot enable MFA.
 data "aws_iam_policy_document" "without_mfa" {
   statement {
-    actions = ["sts:AssumeRole"]
+    actions = [
+      "sts:AssumeRole",
+      "sts:SetSourceIdentity"
+    ]
 
     principals {
       type        = "AWS"

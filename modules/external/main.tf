@@ -1,8 +1,11 @@
 # Trust relationships policy document
 data "aws_iam_policy_document" "doc" {
   statement {
-    sid     = "AllowAssumeRoleForAnotherAccount"
-    actions = ["sts:AssumeRole"]
+    sid = "AllowAssumeRoleForAnotherAccount"
+    actions = [
+      "sts:AssumeRole",
+      "sts:SetSourceIdentity"
+    ]
 
     principals {
       type        = "AWS"
